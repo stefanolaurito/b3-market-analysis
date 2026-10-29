@@ -458,19 +458,19 @@ As imagens abaixo mostram as três abas principais do dashboard B3 Market Analys
 
 A aba permite comparar a evolução dos ativos por meio do índice normalizado Base 100.
 
-![Dashboard — Desempenho e retorno acumulado](docs/dash-1.png)
+![Dashboard — Desempenho e retorno acumulado](docs/dash-1.PNG)
 
 #### 2. Risco e volatilidade
 
 Esta aba apresenta a relação entre risco e retorno, o ranking do Índice de Sharpe, a distribuição dos retornos diários e o drawdown histórico.
 
-![Dashboard — Risco e volatilidade](docs/dash-2.png)
+![Dashboard — Risco e volatilidade](docs/dash-2.PNG)
 
 #### 3. Tendência e dados
 
 Nesta aba, é possível analisar o fechamento ajustado em relação às médias móveis SMA 21 e SMA 50, consultar os dados e exportar os registros filtrados para CSV.
 
-![Dashboard — Tendência e dados](docs/dash-3.png)
+![Dashboard — Tendência e dados](docs/dash-3.PNG)
 
 ## 13. Vídeo de apresentação (pitch)
 
