@@ -106,6 +106,12 @@ A cópia CSV é estática e representa a base no momento da exportação. Para a
 
 ### 4.5. Reprodução do ETL
 
+Antes da primeira execução em um banco PostgreSQL novo, é necessário criar a estrutura da tabela de destino.
+
+Para isso, execute o conteúdo do arquivo `schema.sql` no SQL Editor do Supabase ou diretamente no PostgreSQL. Esse script cria a tabela `public.historico_acoes` e o índice único composto por `data` e `ticker`, necessário para o controle de duplicidades realizado pelo ETL.
+
+Essa preparação é necessária apenas na configuração inicial do banco. Em bancos que já possuem essa estrutura, não é necessário recriá-la.
+
 Com Python instalado, as dependências necessárias e as credenciais configuradas localmente, execute:
 
 ```powershell
@@ -412,11 +418,11 @@ Abra o endereço local exibido no terminal, normalmente `http://localhost:8501`.
 
 ## 11. Estrutura do repositório
 
-```text
 b3-market-analysis/
 ├── app.py
 ├── carregar_dados.py
 ├── exportar_csv.py
+├── schema.sql
 ├── historico_acoes.csv
 ├── requirements.txt
 ├── README.md
@@ -425,7 +431,6 @@ b3-market-analysis/
 │   └── trello-quadro.png
 └── .streamlit/
     └── secrets.toml  # somente local; não versionar
-```
 
 O diretório `docs/` contém a evidência visual do quadro Kanban. O arquivo `.streamlit/secrets.toml` deve permanecer apenas no ambiente local e na configuração privada do aplicativo hospedado.
 
