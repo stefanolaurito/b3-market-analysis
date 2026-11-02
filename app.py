@@ -1,3 +1,8 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+ARQUIVO_CSV = BASE_DIR / "historico_acoes.csv"
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -50,7 +55,7 @@ def preparar_dados(df):
 @st.cache_data(ttl=600)
 def carregar_csv():
     """Usa a cópia local se o PostgreSQL/Supabase estiver indisponível."""
-    df = pd.read_csv("historico_acoes.csv")
+    df = pd.read_csv(ARQUIVO_CSV)
     return preparar_dados(df)
 
 

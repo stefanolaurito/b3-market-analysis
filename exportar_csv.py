@@ -1,3 +1,8 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+ARQUIVO_CSV = BASE_DIR / "historico_acoes.csv"
+
 import pandas as pd
 from sqlalchemy import text
 
@@ -28,7 +33,7 @@ try:
         raise RuntimeError("A tabela do banco não contém registros.")
 
     df.to_csv(
-        "historico_acoes.csv",
+        ARQUIVO_CSV,
         index=False,
         encoding="utf-8",
     )
